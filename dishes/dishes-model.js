@@ -15,7 +15,7 @@ function getDishes() {
 
 // add the dish to the database and return the id of the new dish.
 function addDish(dish) {
-  return db(dishes)
+  return db('dishes')
     .insert(dish)
     .then(ids => ({ id: ids[0] }));
 }
@@ -33,4 +33,8 @@ function getRecipes() {
 }
 
 // add a recipe to the database and return the id of the new recipe.
-function addRecipe(recipe) {}
+function addRecipe(recipe) {
+  return db('recipes')
+    .insert(recipe)
+    .then(ids => ({ id: ids[0] }));
+}
